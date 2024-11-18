@@ -1,3 +1,3 @@
-module github.com/grbll/go-context-introduction
+module github.com/grbll/go-introductions-contexts
 
 go 1.23.1
