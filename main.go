@@ -6,9 +6,11 @@ import (
 )
 
 func doSomething(c context.Context) {
-	fmt.Println("Did something!")
+	fmt.Printf("I said hello to %v!", c.Value(true))
 }
 func main() {
-	c := context.TODO()
+	c := context.Background()
+
+	c = context.WithValue(c, true, "hans")
 	doSomething(c)
 }
