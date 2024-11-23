@@ -7,8 +7,7 @@ import (
 )
 
 func doSomething(c context.Context) {
-	deadline := time.Now().Add(1000 * time.Millisecond)
-	cc, cancelCtx := context.WithDeadline(c, deadline)
+	cc, cancelCtx := context.WithTimeout(c, time.Second)
 	defer cancelCtx()
 	var numChan chan int = make(chan int)
 
